@@ -7,7 +7,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-const port = process.env.port || 5000;
+const PORT = process.env.PORT || 5000;
 
 //cors
 app.use(cors());
@@ -31,11 +31,11 @@ client.on("error", function (error) {
 // start the server
 const startServer = async () => {
   try {
-    app.listen(port, () => {
-      console.log(`Server beating 💓 on port :: ${port}`);
+    app.listen(PORT, () => {
+      console.log(`Server beating 💓 on port :: ${PORT}`);
     });
   } catch (error) {
-    port;
+    PORT;
     console.log("Error connecting to MongoDB:", error);
   }
 };
