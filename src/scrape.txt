@@ -12,3 +12,6 @@ This webpage appears to be a sneaker store website. It contains a navigation bar
   logprobs: null,
   finish_reason: 'stop'
 }
+
+In your case, since you're trying to avoid making unnecessary requests to the GPT API, server-side caching seems more appropriate. When you cache the summaries on the server side, you can return the cached summary for a URL regardless of who is making the request, saving you the cost of making a request to the GPT API.
+
