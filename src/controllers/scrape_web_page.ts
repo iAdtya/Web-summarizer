@@ -3,7 +3,7 @@ import { summerizeWebPage } from "./summarize_web_page";
 import client from "../redisClient";
 
 export const scrapeWebPage = async (url: string) => {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ headless: "new" });
   const page = await browser.newPage();
   await page.goto(url, {
     // use networkidle0 to scrape the complete page (all requests finished loading)
