@@ -12,6 +12,5 @@ export const scrapeWebPage = async (url: string) => {
   await browser.close();
 
   const summary = await summerizeWebPage(content);
-
   return summary;
 };

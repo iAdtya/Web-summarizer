@@ -1,3 +1,14 @@
 This website appears to be a sneaker store. The homepage includes a navigation bar at the top with links to different pages such as "Add Product," "Orders," and "Go to Cart." There is also a heading that says "Welcome, Sneaker Head!!" and a grid layout of products. The footer includes copyright information and a link to the creator's GitHub page.
 
 This webpage appears to be a sneaker store website. It contains a navigation bar with links to different sections of the website such as adding products, viewing orders, and accessing the shopping cart. The page also has a title "Welcome, Sneaker Head!!" and a grid for displaying sneakers. Additionally, there is a footer with the copyright information and a link to the website creator's GitHub profile.
+
+
+{
+  index: 0,
+  message: {
+    role: 'assistant',
+    content: `This page appears to be a website for a sneaker store. The website has a navigation bar at the top with options for adding products, viewing orders, and accessing the shopping cart. The page also includes a heading that says "Welcome, Sneaker Head!!" and a footer with a copyright notice and a link to the website creator's GitHub profile.`
+  },
+  logprobs: null,
+  finish_reason: 'stop'
+}

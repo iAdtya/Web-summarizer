@@ -18,4 +18,5 @@ export const summerizeWebPage = async (content: any) => {
   });
 
   console.log(completion.choices[0]);
+  return completion.choices[0];
 };
