@@ -4,10 +4,9 @@
   "description": "Web-contextulizer is a simple web application that allows you to create a context for any website.",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc -w & nodemon dist/app.js",
-    "dev:win": "start /b tsc -w & nodemon dist/app.js",
+    "start": "nodemon dist/app.js",
+    "dev": "tsc --watch",
     "build": "tsc",
-    "build:css": "postcss src/styles.css -o public/styles.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
