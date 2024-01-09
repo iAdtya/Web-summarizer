@@ -38,7 +38,7 @@ app.use((0, body_parser_1.json)());
 app.use(express_1.default.urlencoded({ extended: true }));
 //routes
 app.get("/", (req, res) => {
-    res.send("Hello World!");
+    res.send("Hello World! asdddddddddddd");
     (0, scrape_web_page_1.scrapeWebPage)("https://sneaker-head-store.vercel.app/");
 });
 // start the server
