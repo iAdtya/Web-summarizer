@@ -13,6 +13,7 @@ router.post("/summary", async (req, res) => {
     const summary = await scrapeWebPage(url);
     res.status(200).json({ summary: summary.message });
   } catch (error) {
+    console.error(error);
     res
       .status(500)
       .json({ error: "An error occurred while summarizing the webpage" });
