@@ -1,7 +1,9 @@
 import puppeteer from "puppeteer";
 import { summerizeWebPage } from "./summarize_web_page";
+import logger from "../logging/logger";
 
 export const scrapeWebPage = async (url: string) => {
+  logger.info(`Scraping ${url}`);
   const browser = await puppeteer.launch({ headless: "new" });
   const page = await browser.newPage();
   await page.goto(url, {

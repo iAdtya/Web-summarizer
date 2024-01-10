@@ -1,7 +1,9 @@
 import OpenAI from "openai";
 const openai = new OpenAI();
+import logger from "../logging/logger";
 
 export const summerizeWebPage = async (content: any) => {
+  logger.info(`Summarizing the content of the web page ${content}`);
   // i have to pipe the content of the web page into this function
   // and then return the summary
 
