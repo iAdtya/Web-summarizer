@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", routes);
 
 // let server: http.Server;
-let server;
+let server: any;
 
 // start the server
 const startServer = async (): Promise<void> => {
