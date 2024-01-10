@@ -11,7 +11,12 @@ const app: Express = express();
 const PORT = process.env.PORT || 5000;
 
 //cors
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://web-summarizer-client.vercel.app",
+    credentials: true,
+  })
+);
 
 //middleware
 app.use(json());
