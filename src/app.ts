@@ -1,12 +1,13 @@
-import express from "express";
+import express, { Express } from "express";
 import { json } from "body-parser";
 import cors from "cors";
 import routes from "./routes/index";
-import client from "./redisClient";
 import dotenv from "dotenv";
 dotenv.config();
+// import http from "http";
+import logger from "./logging/logger";
 
-const app = express();
+const app: Express = express();
 const PORT = process.env.PORT || 5000;
 
 //cors
@@ -20,24 +21,20 @@ app.use(express.urlencoded({ extended: true }));
 //routes
 app.use("/", routes);
 
-client.on("connect", function () {
-  console.log("Connected to Redis server");
-});
-
-client.on("error", function (error) {
-  console.error("Error connecting to Redis server: ", error);
-});
+// let server: http.Server;
+let server;
 
 // start the server
-const startServer = async () => {
+const startServer = async (): Promise<void> => {
   try {
-    app.listen(PORT, () => {
-      console.log(`Server beating 💓 on port :: ${PORT}`);
+    server = app.listen(PORT, () => {
+      logger.info(`Server beating 💓 on port :: ${PORT}`);
     });
-  } catch (error) {
-    PORT;
-    console.log("Error connecting to MongoDB:", error);
+  } catch (error: any) {
+    logger.error(`Error occurred: ${error.message}`);
   }
 };
 
 startServer();
+
+export { app, server };

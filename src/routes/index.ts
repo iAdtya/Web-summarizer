@@ -1,5 +1,6 @@
 import express from "express";
 import { scrapeWebPage } from "../controllers/scrape_web_page";
+import logger from "../logging/logger";
 
 const router = express.Router();
 
@@ -12,14 +13,17 @@ router.post("/summary", async (req, res) => {
   try {
     const summary = await scrapeWebPage(url);
     res.status(200).json({ summary: summary.message });
+
+    logger.info(`Summary of ${url} is ${summary.message}`);
   } catch (error) {
-    console.error(error);
+    logger.error(`Error occurred while summarizing ${url} ${error}`);
+
     res
       .status(500)
       .json({ error: "An error occurred while summarizing the webpage" });
   }
 });
 
-console.log("router loaded");
+logger.info("router loaded");
 
 export default router;
