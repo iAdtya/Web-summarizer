@@ -4,7 +4,7 @@ import cors from "cors";
 import routes from "./routes/index";
 import dotenv from "dotenv";
 dotenv.config();
-// import http from "http";
+import http from "http";
 import logger from "./logging/logger";
 
 const app: Express = express();
@@ -21,8 +21,8 @@ app.use(express.urlencoded({ extended: true }));
 //routes
 app.use("/", routes);
 
-// let server: http.Server;
-let server: any;
+let server: http.Server;
+// let server;
 
 // start the server
 const startServer = async (): Promise<void> => {
